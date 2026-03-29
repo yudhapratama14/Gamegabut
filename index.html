@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PEENES Z 🔮</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;700&family=Syne+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- SCREEN: MENU -->
+  <div id="screen-menu" class="screen active">
+    <div class="bg-noise"></div>
+    <div class="floating-orb orb1"></div>
+    <div class="floating-orb orb2"></div>
+    <div class="floating-orb orb3"></div>
+    <div class="menu-content">
+      <div class="logo-wrap">
+        <div class="logo-eyebrow">✦ the original marble destroyer ✦</div>
+        <h1 class="logo">PEENES<span class="logo-z"> Z</span></h1>
+        <div class="logo-sub">NO THOUGHTS, HEAD EMPTY, JUST SHOOT</div>
+      </div>
+      <div class="menu-buttons">
+        <button class="btn btn-main" id="btn-play">GASS MAINNN 🔥</button>
+        <button class="btn btn-secondary" id="btn-how">cara main? 🤔</button>
+      </div>
+      <div class="menu-stats">
+        <div class="stat-pill">High Score: <span id="menu-highscore">0</span></div>
+      </div>
+      <div class="vibe-text">no skips. no ads. just vibes.</div>
+    </div>
+  </div>
+
+  <!-- SCREEN: HOW TO PLAY -->
+  <div id="screen-how" class="screen">
+    <div class="bg-noise"></div>
+    <div class="modal-box">
+      <h2 class="modal-title">OK DENGERIN DULU 📋</h2>
+      <ul class="how-list">
+        <li>🎯 Tembak bola dari tengah ke bola yang bergerak di jalur</li>
+        <li>🔴 Cocokkan 3 bola warna sama → MELEDAK bestie</li>
+        <li>💀 Kalau bola sampai ujung → GAME OVER ngab</li>
+        <li>🖱️ Gerakin mouse untuk arah tembak</li>
+        <li>🖱️ Klik untuk tembak</li>
+        <li>⚡ Makin lama makin cepet, makin susah</li>
+        <li>🌟 Combo = poin gede, jangan stop!</li>
+      </ul>
+      <button class="btn btn-main" id="btn-back">balik deh →</button>
+    </div>
+  </div>
+
+  <!-- SCREEN: GAME -->
+  <div id="screen-game" class="screen">
+    <div class="hud">
+      <div class="hud-left">
+        <div class="hud-score">
+          <div class="hud-label">SCORE</div>
+          <div class="hud-value" id="hud-score">0</div>
+        </div>
+        <div class="hud-combo" id="hud-combo-wrap">
+          <div class="hud-label">COMBO</div>
+          <div class="hud-value" id="hud-combo">x1</div>
+        </div>
+      </div>
+      <div class="hud-center">
+        <div class="game-title-small">PEENES Z</div>
+      </div>
+      <div class="hud-right">
+        <div class="hud-level">
+          <div class="hud-label">LEVEL</div>
+          <div class="hud-value" id="hud-level">1</div>
+        </div>
+        <button class="btn-pause" id="btn-pause">⏸</button>
+      </div>
+    </div>
+    <canvas id="game-canvas"></canvas>
+    <div class="next-ball-wrap">
+      <div class="next-label">NEXT</div>
+      <canvas id="next-canvas" width="60" height="60"></canvas>
+    </div>
+  </div>
+
+  <!-- SCREEN: PAUSE -->
+  <div id="screen-pause" class="screen overlay-screen">
+    <div class="modal-box">
+      <h2 class="modal-title">PAUSE ✋</h2>
+      <p class="modal-text">istirahat sebentar ya bestie</p>
+      <div class="modal-buttons">
+        <button class="btn btn-main" id="btn-resume">LANJUT →</button>
+        <button class="btn btn-secondary" id="btn-quit">QUIT AH</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN: GAME OVER -->
+  <div id="screen-gameover" class="screen overlay-screen">
+    <div class="modal-box gameover-box">
+      <div class="gameover-emoji">💀</div>
+      <h2 class="modal-title">GAME OVER BRO</h2>
+      <div class="gameover-stats">
+        <div class="go-stat">
+          <span class="go-label">SCORE</span>
+          <span class="go-value" id="go-score">0</span>
+        </div>
+        <div class="go-stat">
+          <span class="go-label">LEVEL</span>
+          <span class="go-value" id="go-level">1</span>
+        </div>
+        <div class="go-stat">
+          <span class="go-label">HIGH SCORE</span>
+          <span class="go-value" id="go-highscore">0</span>
+        </div>
+      </div>
+      <div class="go-message" id="go-message">better luck next time 💅</div>
+      <div class="modal-buttons">
+        <button class="btn btn-main" id="btn-retry">COBA LAGI 🔄</button>
+        <button class="btn btn-secondary" id="btn-menu">MENU</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCREEN: LEVEL UP -->
+  <div id="screen-levelup" class="screen overlay-screen">
+    <div class="levelup-content">
+      <div class="levelup-text">LEVEL UP!</div>
+      <div class="levelup-num" id="levelup-num">2</div>
+      <div class="levelup-sub">let's get it 🚀</div>
+    </div>
+  </div>
+
+  <!-- Floating score popups container -->
+  <div id="popups"></div>
+
+  <script src="game.js"></script>
+</body>
+</html>
